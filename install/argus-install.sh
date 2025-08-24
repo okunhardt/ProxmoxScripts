@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/okunhardt/ProxmoxScripts/raw/main/LICENSE
 # Source: https://release-argus.io/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -51,15 +51,15 @@ service:
       icon_link_to: https://release-argus.io
       web_url: https://github.com/release-argus/Argus/blob/master/CHANGELOG.md
 
-  community-scripts/ProxmoxVE:
+  okunhardt/ProxmoxScripts:
     latest_version:
       type: github
-      url: community-scripts/ProxmoxVE
+      url: okunhardt/ProxmoxScripts
       use_prerelease: false
     dashboard:
-      icon: https://raw.githubusercontent.com/community-scripts/ProxmoxVE/refs/heads/main/misc/images/logo.png
+      icon: https://raw.githubusercontent.com/okunhardt/ProxmoxScripts/refs/heads/main/misc/images/logo.png
       icon_link_to: https://helper-scripts.com/
-      web_url: https://github.com/community-scripts/ProxmoxVE/releases
+      web_url: https://github.com/okunhardt/ProxmoxScripts/releases
 EOF
 msg_ok "Setup Config"
 

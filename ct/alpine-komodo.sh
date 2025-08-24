@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/okunhardt/ProxmoxScripts/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/okunhardt/ProxmoxScripts/raw/main/LICENSE
 # Source: https://komo.do
 
 APP="Alpine-Komodo"
@@ -37,7 +37,7 @@ function update_script() {
     msg_error "❌ Detected outdated Komodo setup using SQLite or PostgreSQL (FerretDB v1)."
     echo -e "${YW}This configuration is no longer supported since Komodo v1.18.0.${CL}"
     echo -e "${YW}Please follow the migration guide:${CL}"
-    echo -e "${BGN}https://github.com/community-scripts/ProxmoxVE/discussions/5689${CL}\n"
+    echo -e "${BGN}https://github.com/okunhardt/ProxmoxScripts/discussions/5689${CL}\n"
     exit 1
   fi
 

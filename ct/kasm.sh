@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/okunhardt/ProxmoxScripts/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Omar Minaya
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/okunhardt/ProxmoxScripts/raw/main/LICENSE
 # Source: https://www.kasmweb.com/docs/latest/index.html
 
 APP="Kasm"
