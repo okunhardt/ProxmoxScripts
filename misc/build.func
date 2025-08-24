@@ -1292,7 +1292,7 @@ EOF
       else
         # After 10 unsuccessful ping attempts, try HTTP connectivity via wget as fallback
         msg_warn "Ping failed 10 times. Trying HTTP connectivity check (wget) as fallback..."
-        if pct exec "$CTID" -- wget -q --spider http://deb.debian.org; then
+        if pct exec "$CTID" -- wget -q --spider https://deb.debian.org; then
           msg_ok "Network in LXC is reachable (wget fallback)"
         else
           msg_error "No network in LXC after all checks."
@@ -1302,7 +1302,7 @@ EOF
             pct set "$CTID" --nameserver 1.1.1.1
             pct set "$CTID" --nameserver 8.8.8.8
             # Final attempt with wget after DNS change
-            if pct exec "$CTID" -- wget -q --spider http://deb.debian.org; then
+            if pct exec "$CTID" -- wget -q --spider https://deb.debian.org; then
               msg_ok "Network reachable after DNS fallback"
             else
               msg_error "Still no network/DNS in LXC! Aborting customization."
@@ -1325,8 +1325,8 @@ EOF
   if [ "$var_os" == "alpine" ]; then
     sleep 3
     pct exec "$CTID" -- /bin/sh -c 'cat <<EOF >/etc/apk/repositories
-http://dl-cdn.alpinelinux.org/alpine/latest-stable/main
-http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
+https://dl-cdn.alpinelinux.org/alpine/latest-stable/main
+https://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 EOF'
     pct exec "$CTID" -- ash -c "apk add bash newt curl openssh nano mc ncurses jq >/dev/null"
   else

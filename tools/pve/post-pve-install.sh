@@ -111,9 +111,9 @@ start_routines_8() {
   yes)
     msg_info "Correcting Proxmox VE Sources"
     cat <<EOF >/etc/apt/sources.list
-deb http://deb.debian.org/debian bookworm main contrib
-deb http://deb.debian.org/debian bookworm-updates main contrib
-deb http://security.debian.org/debian-security bookworm-security main contrib
+deb https://deb.debian.org/debian bookworm main contrib
+deb https://deb.debian.org/debian bookworm-updates main contrib
+deb https://security.debian.org/debian-security bookworm-security main contrib
 EOF
     echo 'APT::Get::Update::SourceListWarnings::NonFreeFirmware "false";' >/etc/apt/apt.conf.d/no-bookworm-firmware.conf
     msg_ok "Corrected Proxmox VE Sources"
@@ -142,7 +142,7 @@ EOF
   yes)
     msg_info "Enabling 'pve-no-subscription' repository"
     cat <<EOF >/etc/apt/sources.list.d/pve-install-repo.list
-deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+deb https://download.proxmox.com/debian/pve bookworm pve-no-subscription
 EOF
     msg_ok "Enabled 'pve-no-subscription' repository"
     ;;
@@ -157,9 +157,9 @@ EOF
     msg_info "Correcting 'ceph package repositories'"
     cat <<EOF >/etc/apt/sources.list.d/ceph.list
 # deb https://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise
-# deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
+# deb https://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
 # deb https://enterprise.proxmox.com/debian/ceph-reef bookworm enterprise
-# deb http://download.proxmox.com/debian/ceph-reef bookworm no-subscription
+# deb https://download.proxmox.com/debian/ceph-reef bookworm no-subscription
 EOF
     msg_ok "Corrected 'ceph package repositories'"
     ;;
@@ -173,7 +173,7 @@ EOF
   yes)
     msg_info "Adding 'pvetest' repository and set disabled"
     cat <<EOF >/etc/apt/sources.list.d/pvetest-for-beta.list
-# deb http://download.proxmox.com/debian/pve bookworm pvetest
+# deb https://download.proxmox.com/debian/pve bookworm pvetest
 EOF
     msg_ok "Added 'pvetest' repository"
     ;;
@@ -252,19 +252,19 @@ start_routines_9() {
       # Create new deb822 sources
       cat >/etc/apt/sources.list.d/debian.sources <<EOF
 Types: deb
-URIs: http://deb.debian.org/debian
+URIs: https://deb.debian.org/debian
 Suites: trixie
 Components: main contrib
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 Types: deb
-URIs: http://security.debian.org/debian-security
+URIs: https://security.debian.org/debian-security
 Suites: trixie-security
 Components: main contrib
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 Types: deb
-URIs: http://deb.debian.org/debian
+URIs: https://deb.debian.org/debian
 Suites: trixie-updates
 Components: main contrib
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
@@ -439,7 +439,7 @@ EOF
       msg_info "Adding 'pve-no-subscription' repository (deb822)"
       cat >/etc/apt/sources.list.d/proxmox.sources <<EOF
 Types: deb
-URIs: http://download.proxmox.com/debian/pve
+URIs: https://download.proxmox.com/debian/pve
 Suites: trixie
 Components: pve-no-subscription
 Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
@@ -463,7 +463,7 @@ EOF
       msg_info "Adding 'ceph package repositories' (deb822)"
       cat >/etc/apt/sources.list.d/ceph.sources <<EOF
 Types: deb
-URIs: http://download.proxmox.com/debian/ceph-squid
+URIs: https://download.proxmox.com/debian/ceph-squid
 Suites: trixie
 Components: no-subscription
 Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
@@ -492,7 +492,7 @@ EOF
       msg_info "Adding 'pve-test' repository (deb822, disabled)"
       cat >/etc/apt/sources.list.d/pve-test.sources <<EOF
 # Types: deb
-# URIs: http://download.proxmox.com/debian/pve
+# URIs: https://download.proxmox.com/debian/pve
 # Suites: trixie
 # Components: pve-test
 # Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg

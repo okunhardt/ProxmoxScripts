@@ -16,7 +16,7 @@ post_to_api() {
     return
   fi
 
-  local API_URL="http://api.community-scripts.org/upload"
+  local API_URL="https://api.community-scripts.org/upload"
   local pve_version="not found"
   pve_version=$(pveversion | awk -F'[/ ]' '{print $2}')
 
@@ -65,7 +65,7 @@ post_to_api_vm() {
     return
   fi
 
-  local API_URL="http://api.community-scripts.org/upload"
+  local API_URL="https://api.community-scripts.org/upload"
   local pve_version="not found"
   pve_version=$(pveversion | awk -F'[/ ]' '{print $2}')
 
@@ -108,7 +108,7 @@ post_update_to_api() {
   if [ "$POST_UPDATE_DONE" = true ]; then
     return 0
   fi
-  local API_URL="http://api.community-scripts.org/upload/updatestatus"
+  local API_URL="https://api.community-scripts.org/upload/updatestatus"
   local status="${1:-failed}"
   local error="${2:-No error message}"
 

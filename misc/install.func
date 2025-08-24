@@ -135,7 +135,7 @@ update_os() {
     cat <<EOF >/usr/local/bin/apt-proxy-detect.sh
 #!/bin/bash
 if nc -w1 -z "${CACHER_IP}" 3142; then
-  echo -n "http://${CACHER_IP}:3142"
+  echo -n "https://${CACHER_IP}:3142"
 else
   echo -n "DIRECT"
 fi
